@@ -14,9 +14,9 @@
 
         header {
             background-color: #00796b;
-            color: #000;
+            color: red ;
             padding: 110px 20px;
-            text-align: center;
+            text-align: left;
             background-image: url('https://d51h1y0hva8v.cloudfront.net/images/default-source/importacion/deficit-atencional-t.jpg?sfvrsn=776a57cc_0');
             background-size: cover;
             background-position: center;
@@ -24,7 +24,7 @@
         }
 
         nav {
-            background-color: #004d40;
+            background-color: #066e25;
             color: #fff;
             padding: 10px 0;
             text-align: center;
@@ -46,6 +46,17 @@
             color: #fff;
         }
 
+        section p,
+        section img {
+            margin: 0 auto; 
+            display: block; 
+        }
+
+        section img {
+            max-width: 100%;
+            height: auto;
+        }
+
         footer {
             background-color: #004d40;
             color: #fff;
@@ -55,28 +66,107 @@
             bottom: 0;
             width: 100%;
         }
+
+        .video-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-size: 24px; 
+        }
+
+        @media (max-width: 600px) {
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+
+            footer {
+                position: static;
+            }
+        }
+
     </style>
 </head>
 <body>
     <header>
-        <h1>Trastorno de Déficit de Atención</h1>
+        <h1>Trastorno de Déficit de Atención(TDAH)</h1>
     </header>
     <nav>
-        <a href="#">Inicio</a>
-        <a href="#">Acerca de</a>
-        <a href="#">Video de Referencia</a>
-        <a href="#">Contacto</a>
+        <a href="https://www.idrlabs.com/es/tdah/test.php">Test de TDAH</a>
+        <a href="https://medlineplus.gov/spanish/attentiondeficithyperactivitydisorder.html">Más informacion</a>
+        <a href="#video" class="pointer">Video de Referencia</a>
+        <a href="#">Contacto con un experto</a>
     </nav>
     <section>
-        <h2>Bienvenido</h2>
-        <p>¡Esta es una página web de ejemplo con una interfaz simple pero elegante!</p>
+        <h2>Bienvenidos a una página donde encontrarás todo lo relacionado con el Trastorno de Déficit de Atención</h2>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA_oAsEo5sUQlNrc3Gl6dWpodtMoVJlcJTAg&s" width="300" height="250" alt="Imagen relacionada con el TDAH">
+        <h3>Algunas preguntas frecuentes que se hacen por tener este Trastorno</h3>
+        <p><b>¿Sientes que te distraes con cualquier cosa?</b></p>
+        <img src="https://images3.memedroid.com/images/UPLOADED440/6489eb6e9c253.jpeg" width="300" height="250" alt="Persona distraída">
+        <p><b>¿Que por distraerte te puede afectar a tus estudios?</b></p>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVejnqhQYQg8XyhpVPDmzQe62O8d2l6JEf6Q&s" width="300" height="250" alt="Dificultad en los estudios por distracción">
+        <p><b>¿Te pones a estudiar pero te distraes con el simple vuelo de una mosca?</b></p>
+        <h3>Que es el TDAH?</h3>
+        <p>Imagina tu cerebro como una fiesta. En una fiesta normal, todos los invitados están sentados y escuchan al anfitrión. Pero en la fiesta del TDAH, algunos invitados son como niños hiperactivos que corren por todos lados, se distraen fácilmente y olvidan qué estaban haciendo. Otros invitados son como soñadores, se pierden en sus propios pensamientos y se olvidan del tiempo. Y luego están los que tienen problemas para controlar sus impulsos, como aquellos que ven un plato de galletas y no pueden resistir la tentación de comerlas todas de una vez.
+
+            En resumen, el TDAH es como tener una fiesta en tu cerebro donde algunos invitados no pueden quedarse quietos, otros están en su propio mundo y algunos no pueden controlar sus impulsos. Pero con la estrategia y el apoyo adecuados, ¡todos los invitados pueden aprender a comportarse y disfrutar de la fiesta juntos!</p>
+        <h4><b>¿Cómo se genera el TDAH?</b></h4>
+        <p>Los factores que pueden estar involucrados en el desarrollo del TDAH incluyen la genética, el medio ambiente o problemas con el sistema nervioso central en momentos clave del desarrollo.</p>
+        <video width="560" height="315" controls>
+            <source src="c:\Users\micha\Downloads\Video de WhatsApp 2024-06-04 a las 15.25.39_a4a9f27f.mp4" type="video/mp4">
+            
+          </video>
+        <h5><b>¿Cómo te das cuenta que tienes TDAH?</b></h5>
+        <ul>
+            <li><b>Dificultad para concentrarse</b>
+                <ul>
+                    <li><b>Distracción muy fácil:</b> Te distraes fácilmente con cosas que pasan a tu alrededor, incluso con pequeños ruidos o movimientos.</li>
+                    <li><b>Problemas para poder terminar tus tareas:</b> Empiezas una tarea pero tienes problemas para terminarla porque te distraes o pierdes el interés rápidamente.</li>
+                </ul>
+            </li>
+            <li><b>Impulsividad</b>
+                <ul>
+                    <li><b>Hablas o actúas sin pensar:</b> Dices cosas sin pensarlo antes, o haces cosas sin considerar las consecuencias.</li>
+                    <li><b>Dificultad para esperar:</b> Te cuesta esperar tu turno o ser paciente en situaciones como hacer fila o esperar que alguien termine de hablar.</li>
+                </ul>
+            </li>
+            <li><b>Hiperactividad</b>
+                <ul>
+                    <li><b>Inquietud constante:</b> Sientes la necesidad de moverte todo el tiempo, como si tuvieras un motor interno que no puedes apagar.</li>
+                    <li><b>Dificultad para estar sentado:</b> Te cuesta mantenerte sentado en situaciones en las que se espera que estés quieto, como en la escuela o durante las comidas.</li>
+                </ul>
+            </li>
+        </ul>
+        <h6>Ejemplos que puede que te hayan pasado</h6>
+        <ul>
+            <li><b>En la Escuela o en la Universidad</b>
+                <ul>
+                    <li><b>Distracción en clase:</b> Mientras el maestro explica algo, tu mente divaga y te pones a pensar en otras cosas o a mirar por la ventana.</li>
+                    <li><b>Impaciencia en el recreo:</b> Durante los juegos, te cuesta esperar tu turno y puedes interrumpir a los demás.</li>
+                </ul>
+            </li>
+            <li><b>En la casa</b>
+                <ul>
+                    <li><b>Olvidar las tareas:</b> Te dicen que hagas algo, como ordenar tu cuarto, pero te distraes y terminas haciendo otra cosa.</li>
+                    <li><b>Hiperactividad:</b> Mientras ves una película, te levantas constantemente, te mueves de un lado a otro o juegas con cualquier objeto cercano.</li>
+                </ul>
+            </li>
+        </ul>
+        <h6>¿Qué hacer si crees que tienes TDAH?</h6>
+        <ul>
+            <li><b>Habla con Alguien de Confianza:</b> Comenta tus preocupaciones con un padre, maestro o adulto de confianza.</li>
+            <li><b>Consulta a un Profesional:</b> Visita a un psicólogo, psiquiatra o médico especializado. Ellos pueden hacer pruebas y hablar contigo para determinar si tienes TDAH.</li>
+            <li><b>Tratamiento y Apoyo:</b> Si te diagnostican con TDAH, existen tratamientos y estrategias para ayudarte a manejarlo, como terapias, medicación y técnicas de organización.</li>
+        </ul>
+        <h6>Recuerda, esto es muy importante¡</h6>
+        <p>El TDAH no significa que seas menos inteligente o capaz que los demás. Es simplemente una manera diferente en la que tu cerebro funciona, y con el apoyo adecuado, puedes aprender a manejarlo y aprovechar tus fortalezas.</p>
     </section>
     <section id="video" class="video-container">
         <h2>Video de Referencia</h2>
-        <a href="https://youtu.be/1KZYKPK1CPk?si=wvz0diTDGNpLKPjs" target="_blank">Ver Video sobre TDAH</a>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/1KZYKPK1CPk" frameborder="0" allowfullscreen></iframe>
     </section>
-    <footer>
-        <p>Derechos de autor © 2024 Mi Página Web. Todos los derechos reservados.</p>
-    </footer>
+    
 </body>
 </html>
