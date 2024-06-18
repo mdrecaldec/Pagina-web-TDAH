@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Despistados.com</title>
+    <title>Despistados.com - TDAH Interactivo</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -14,7 +14,7 @@
 
         header {
             background-color: #00796b;
-            color: red ;
+            color: #fff;
             padding: 110px 20px;
             text-align: left;
             background-image: url('https://d51h1y0hva8v.cloudfront.net/images/default-source/importacion/deficit-atencional-t.jpg?sfvrsn=776a57cc_0');
@@ -40,19 +40,23 @@
             background-color: #00695c;
         }
 
-        section {
+        .content-section {
             padding: 20px;
-            background-color: #000; 
-            color: #fff;
+            background-color: #fff; 
+            color: #000;
+            margin-bottom: 20px;
         }
 
-        section p,
-        section img {
+        .content-section p,
+        .content-section img,
+        .content-section ul,
+        .content-section video {
             margin: 0 auto; 
             display: block; 
         }
 
-        section img {
+        .content-section img,
+        .content-section video {
             max-width: 100%;
             height: auto;
         }
@@ -76,6 +80,27 @@
             font-size: 24px; 
         }
 
+        .interactive-button {
+            background-color: #00796b;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            display: inline-block;
+            margin: 10px 0;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .interactive-button:hover {
+            background-color: #00695c;
+        }
+
+        .hidden-content {
+            display: none;
+            margin-top: 10px;
+        }
+
         @media (max-width: 600px) {
             nav a {
                 display: block;
@@ -86,87 +111,108 @@
                 position: static;
             }
         }
-
     </style>
+    <script>
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+    </script>
 </head>
 <body>
     <header>
-        <h1>Trastorno de Déficit de Atención(TDAH)</h1>
+        <h1>Trastorno de Déficit de Atención (TDAH)</h1>
     </header>
     <nav>
         <a href="https://www.idrlabs.com/es/tdah/test.php">Test de TDAH</a>
-        <a href="https://medlineplus.gov/spanish/attentiondeficithyperactivitydisorder.html">Más informacion</a>
+        <a href="https://medlineplus.gov/spanish/attentiondeficithyperactivitydisorder.html">Más información</a>
         <a href="#video" class="pointer">Video de Referencia</a>
+        <a href="#relaxation" class="pointer">Métodos de Relajación</a>
         <a href="#">Contacto con un experto</a>
     </nav>
-    <section>
-        <h2>Bienvenidos a una página donde encontrarás todo lo relacionado con el Trastorno de Déficit de Atención</h2>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA_oAsEo5sUQlNrc3Gl6dWpodtMoVJlcJTAg&s" width="300" height="250" alt="Imagen relacionada con el TDAH">
-        <h3>Algunas preguntas frecuentes que se hacen por tener este Trastorno</h3>
-        <p><b>¿Sientes que te distraes con cualquier cosa?</b></p>
-        <img src="https://images3.memedroid.com/images/UPLOADED440/6489eb6e9c253.jpeg" width="300" height="250" alt="Persona distraída">
-        <p><b>¿Que por distraerte te puede afectar a tus estudios?</b></p>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVejnqhQYQg8XyhpVPDmzQe62O8d2l6JEf6Q&s" width="300" height="250" alt="Dificultad en los estudios por distracción">
-        <p><b>¿Te pones a estudiar pero te distraes con el simple vuelo de una mosca?</b></p>
-        <h3>Que es el TDAH?</h3>
-        <p>Imagina tu cerebro como una fiesta. En una fiesta normal, todos los invitados están sentados y escuchan al anfitrión. Pero en la fiesta del TDAH, algunos invitados son como niños hiperactivos que corren por todos lados, se distraen fácilmente y olvidan qué estaban haciendo. Otros invitados son como soñadores, se pierden en sus propios pensamientos y se olvidan del tiempo. Y luego están los que tienen problemas para controlar sus impulsos, como aquellos que ven un plato de galletas y no pueden resistir la tentación de comerlas todas de una vez.
-
-            En resumen, el TDAH es como tener una fiesta en tu cerebro donde algunos invitados no pueden quedarse quietos, otros están en su propio mundo y algunos no pueden controlar sus impulsos. Pero con la estrategia y el apoyo adecuados, ¡todos los invitados pueden aprender a comportarse y disfrutar de la fiesta juntos!</p>
-        <h4><b>¿Cómo se genera el TDAH?</b></h4>
-        <p>Los factores que pueden estar involucrados en el desarrollo del TDAH incluyen la genética, el medio ambiente o problemas con el sistema nervioso central en momentos clave del desarrollo.</p>
-        <video width="560" height="315" controls>
-            <source src="c:\Users\micha\Downloads\Video de WhatsApp 2024-06-04 a las 15.25.39_a4a9f27f.mp4" type="video/mp4">
-            
-          </video>
-        <h5><b>¿Cómo te das cuenta que tienes TDAH?</b></h5>
-        <ul>
-            <li><b>Dificultad para concentrarse</b>
-                <ul>
-                    <li><b>Distracción muy fácil:</b> Te distraes fácilmente con cosas que pasan a tu alrededor, incluso con pequeños ruidos o movimientos.</li>
-                    <li><b>Problemas para poder terminar tus tareas:</b> Empiezas una tarea pero tienes problemas para terminarla porque te distraes o pierdes el interés rápidamente.</li>
-                </ul>
-            </li>
-            <li><b>Impulsividad</b>
-                <ul>
-                    <li><b>Hablas o actúas sin pensar:</b> Dices cosas sin pensarlo antes, o haces cosas sin considerar las consecuencias.</li>
-                    <li><b>Dificultad para esperar:</b> Te cuesta esperar tu turno o ser paciente en situaciones como hacer fila o esperar que alguien termine de hablar.</li>
-                </ul>
-            </li>
-            <li><b>Hiperactividad</b>
-                <ul>
-                    <li><b>Inquietud constante:</b> Sientes la necesidad de moverte todo el tiempo, como si tuvieras un motor interno que no puedes apagar.</li>
-                    <li><b>Dificultad para estar sentado:</b> Te cuesta mantenerte sentado en situaciones en las que se espera que estés quieto, como en la escuela o durante las comidas.</li>
-                </ul>
-            </li>
-        </ul>
-        <h6>Ejemplos que puede que te hayan pasado</h6>
-        <ul>
-            <li><b>En la Escuela o en la Universidad</b>
-                <ul>
-                    <li><b>Distracción en clase:</b> Mientras el maestro explica algo, tu mente divaga y te pones a pensar en otras cosas o a mirar por la ventana.</li>
-                    <li><b>Impaciencia en el recreo:</b> Durante los juegos, te cuesta esperar tu turno y puedes interrumpir a los demás.</li>
-                </ul>
-            </li>
-            <li><b>En la casa</b>
-                <ul>
-                    <li><b>Olvidar las tareas:</b> Te dicen que hagas algo, como ordenar tu cuarto, pero te distraes y terminas haciendo otra cosa.</li>
-                    <li><b>Hiperactividad:</b> Mientras ves una película, te levantas constantemente, te mueves de un lado a otro o juegas con cualquier objeto cercano.</li>
-                </ul>
-            </li>
-        </ul>
-        <h6>¿Qué hacer si crees que tienes TDAH?</h6>
-        <ul>
-            <li><b>Habla con Alguien de Confianza:</b> Comenta tus preocupaciones con un padre, maestro o adulto de confianza.</li>
-            <li><b>Consulta a un Profesional:</b> Visita a un psicólogo, psiquiatra o médico especializado. Ellos pueden hacer pruebas y hablar contigo para determinar si tienes TDAH.</li>
-            <li><b>Tratamiento y Apoyo:</b> Si te diagnostican con TDAH, existen tratamientos y estrategias para ayudarte a manejarlo, como terapias, medicación y técnicas de organización.</li>
-        </ul>
-        <h6>Recuerda, esto es muy importante¡</h6>
-        <p>El TDAH no significa que seas menos inteligente o capaz que los demás. Es simplemente una manera diferente en la que tu cerebro funciona, y con el apoyo adecuado, puedes aprender a manejarlo y aprovechar tus fortalezas.</p>
+    <section class="content-section">
+        <h2>Bienvenidos a una página interactiva sobre el Trastorno de Déficit de Atención</h2>
+        <button class="interactive-button" onclick="toggleContent('tdahInfo')">¿Qué es el TDAH?</button>
+        <div id="tdahInfo" class="hidden-content">
+            <p>El TDAH es una condición que afecta la capacidad de una persona para concentrarse, controlar impulsos y mantenerse quieto. Esto puede dificultar el desempeño en la escuela, el trabajo y las actividades diarias.</p>
+        </div>
+        <button class="interactive-button" onclick="toggleContent('symptoms')">Síntomas del TDAH</button>
+        <div id="symptoms" class="hidden-content">
+            <ul>
+                <li><b>Dificultad para concentrarse:</b> Fácil distracción y problemas para completar tareas.</li>
+                <li><b>Impulsividad:</b> Hablar o actuar sin pensar, dificultad para esperar.</li>
+                <li><b>Hiperactividad:</b> Necesidad constante de moverse, dificultad para estar sentado.</li>
+            </ul>
+        </div>
+        <button class="interactive-button" onclick="toggleContent('examples')">Ejemplos cotidianos</button>
+        <div id="examples" class="hidden-content">
+            <ul>
+                <li><b>En la Escuela o en la Universidad</b>
+                    <ul>
+                        <li><b>Distracción en clase:</b> Mientras el maestro explica algo, tu mente divaga y te pones a pensar en otras cosas o a mirar por la ventana.</li>
+                        <li><b>Impaciencia en el recreo:</b> Durante los juegos, te cuesta esperar tu turno y puedes interrumpir a los demás.</li>
+                    </ul>
+                </li>
+                <li><b>En la casa</b>
+                    <ul>
+                        <li><b>Olvidar las tareas:</b> Te dicen que hagas algo, como ordenar tu cuarto, pero te distraes y terminas haciendo otra cosa.</li>
+                        <li><b>Hiperactividad:</b> Mientras ves una película, te levantas constantemente, te mueves de un lado a otro o juegas con cualquier objeto cercano.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <button class="interactive-button" onclick="toggleContent('diagnosis')">¿Qué hacer si crees que tienes TDAH?</button>
+        <div id="diagnosis" class="hidden-content">
+            <ul>
+                <li><b>Habla con Alguien de Confianza:</b> Comenta tus preocupaciones con un padre, maestro o adulto de confianza.</li>
+                <li><b>Consulta a un Profesional:</b> Visita a un psicólogo, psiquiatra o médico especializado. Ellos pueden hacer pruebas y hablar contigo para determinar si tienes TDAH.</li>
+                <li><b>Tratamiento y Apoyo:</b> Si te diagnostican con TDAH, existen tratamientos y estrategias para ayudarte a manejarlo, como terapias, medicación y técnicas de organización.</li>
+            </ul>
+        </div>
+        <button class="interactive-button" onclick="toggleContent('funFact')">Dato Curioso</button>
+        <div id="funFact" class="hidden-content">
+            <p>El TDAH no significa que seas menos inteligente o capaz que los demás. Es simplemente una manera diferente en la que tu cerebro funciona, y con el apoyo adecuado, puedes aprender a manejarlo y aprovechar tus fortalezas.</p>
+        </div>
+    </section>
+    <section id="relaxation" class="content-section">
+        <h2>Métodos de Relajación para el TDAH</h2>
+        <button class="interactive-button" onclick="toggleContent('meditation')">Meditación y mindfulness</button>
+        <div id="meditation" class="hidden-content">
+            <p>Practicar la meditación y el mindfulness puede ayudar a calmar la mente y mejorar la atención. Dedica unos minutos al día para sentarte en un lugar tranquilo, cerrar los ojos y concentrarte en tu respiración. Esto puede ayudarte a reducir el estrés y a mejorar tu capacidad para concentrarte en las tareas diarias.</p>
+            <img src="https://www.sportlife.es/uploads/s1/75/64/55/3/5cf4d14a0ee694df56349930-meditacion-mindfulness-estudios-cientificos-beneficios-meditacion.jpeg" width="300" height="200">
+        </div>
+        <button class="interactive-button" onclick="toggleContent('exercise')">Ejercicio físico regular</button>
+        <div id="exercise" class="hidden-content">
+            <p>El ejercicio ayuda a liberar energía y mejorar la atención. Actividades como correr, nadar, andar en bicicleta o practicar algún deporte pueden ser muy beneficiosas. El ejercicio regular no solo mejora la salud física, sino que también puede tener un impacto positivo en la salud mental y en la capacidad de concentración.</p>
+            <img src="https://www.somospacientes.com/wp-content/uploads/2016/06/ejercicio-f%C3%ADsico.jpg" alt="Ejercicio físico" width="300" height="200">
+        </div>
+        <button class="interactive-button" onclick="toggleContent('breathing')">Técnicas de respiración</button>
+        <div id="breathing" class="hidden-content">
+            <p>Respirar profundamente y de manera controlada puede ayudar a calmar la mente y reducir la ansiedad. Prueba a inhalar lentamente por la nariz, sostén la respiración durante unos segundos y luego exhala lentamente por la boca. Repite este proceso varias veces hasta sentirte más relajado.</p>
+            <img src="https://www.terapify.com/blog/wp-content/uploads/2023/06/mujer-rubia-meditando-espacio-copia-1-1024x576.jpg" alt="Técnicas de respiración" width="300" height="200">
+        </div>
+        <button class="interactive-button" onclick="toggleContent('routine')">Establecer una rutina</button>
+        <div id="routine" class="hidden-content">
+            <p>Tener una rutina diaria puede ayudar a las personas con TDAH a mantenerse organizadas y a reducir el estrés. Establece horarios fijos para despertarse, comer, estudiar, hacer ejercicio y dormir. Utiliza recordatorios, listas de tareas y calendarios para ayudarte a seguir tu rutina.</p>
+            <img src="https://www.clikisalud.net/wp-content/uploads/2019/11/sludables-pasos-establecer-mantener-rutina.jpg" alt="Establecer una rutina" width="300" height="200">
+        </div>
+        <button class="interactive-button" onclick="toggleContent('nature')">Tiempo en la naturaleza</button>
+        <div id="nature" class="hidden-content">
+            <p>Pasar tiempo al aire libre puede ser una forma efectiva de reducir el estrés y mejorar la atención. Pasea por el parque, haz una caminata en el bosque o simplemente pasa tiempo en tu jardín. La naturaleza tiene un efecto calmante que puede ser muy beneficioso para las personas con TDAH.</p>
+            <img src="https://www.goredforwomen.org/-/media/Images/Healthy-Living/Healthy-Lifestyle/man_relaxing_In_nature.jpg" alt="Tiempo en la naturaleza" width="300" height="200">
+        </div>
     </section>
     <section id="video" class="video-container">
-        <h2>Video de Referencia</h2>
+        <h2>Videos de Referencia</h2>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/1KZYKPK1CPk" frameborder="0" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/yWPFdDxJNw8" frameborder="0" allowfullscreen></iframe>
     </section>
-    
+    <footer>
+        <p>&copy; 2024 Despistados.com - Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>
