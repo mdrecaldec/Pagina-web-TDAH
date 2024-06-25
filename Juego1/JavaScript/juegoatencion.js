@@ -49,22 +49,22 @@ function inicio()
 				if(sec[i].id=="bot1")
 					{
 						sec[i].style.backgroundColor="rgba(255, 0, 0, 1)"; //Cambia el color del boton.
-						sonido("audio/audio1.mp3"); //Reproduce el audio definido entre parentesis.
+						sonido("audio/Bot1.mp3"); //Reproduce el audio definido entre parentesis.
 					}
 				if(sec[i].id=="bot2")
 					{
 						sec[i].style.backgroundColor="rgba(0, 0, 255, 1)";		
-						sonido("audio/audio2.mp3");
+						sonido("audio/Bot2.mp3");
 					}
 				if(sec[i].id=="bot3")
 					{
 						sec[i].style.backgroundColor="rgba(255, 255, 0, 1)";
-						sonido("audio/audio3.mp3");
+						sonido("audio/Bot3.mp3");
 					}
 				if(sec[i].id=="bot4")
 					{
 						sec[i].style.backgroundColor="rgba(0, 255, 0, 1)";	
-						sonido("audio/audio4.mp3");
+						sonido("audio/Bot4.mp3");
 					}
 				tiempoColor=setTimeout(apagarSec,500,i); //Dispara la funcion apagarSec despues de medio segundo.
 			}
@@ -82,22 +82,22 @@ function inicio()
 				var pos = acc.target || acc.srcElement; // Se guarda el objetivo del evento, o la el elemento fuente del evento.
 				if(pos.id=="bot1")
 					{
-						sonido("audio/audio1.mp3");
+						sonido("audio/Bot1.mp3");
 						pos.style.backgroundColor="rgba(255, 0, 0, 1)";
 					}
 				if(pos.id=="bot2")
 					{
-						sonido("audio/audio2.mp3");
+						sonido("audio/Bot2.mp3");
 						pos.style.backgroundColor="rgba(0, 0, 255, 1)";
 					}
 				if(pos.id=="bot3")
 					{
-						sonido("audio/audio3.mp3");
+						sonido("audio/Bot3.mp3");
 						pos.style.backgroundColor="rgba(255, 255, 0, 1)";
 					}
 				if(pos.id=="bot4")
 					{
-						sonido("audio/audio4.mp3");
+						sonido("audio/Bot4.mp3");
 						pos.style.backgroundColor="rgba(0, 255, 0, 1)";
 					}
 				apagarColor=setTimeout(apagarMarc,500,pos); //Dispara la funcion apagarMarc despues de medio segundo.
@@ -142,7 +142,7 @@ function inicio()
 
 		function perder()
 			{
-				sonido("audio/audio_perder.mp3")
+				sonido("audio/Perder.mp3")
 				ban=1; //Cambia el valor de vandera para cambiar el mensaje de menu.
 				menu(); //Dispara la funcion menu.
 				for(i=0;i<4;i++)

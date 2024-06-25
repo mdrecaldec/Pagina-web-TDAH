@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Despistados.com - TDAH Interactivo</title>
+    <title>Despistados.com</title> 
+    <link rel="icon" href="10280606.ico" type="image/x-icon"> <!--Aqui implemento un logo a la pagina en la parte de la pestaña-->>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -80,6 +81,11 @@
             font-size: 24px; 
         }
 
+        header h1 {
+        color: black;
+        text-align: right; 
+    }
+
         .interactive-button {
             background-color: #00796b;
             color: #fff;
@@ -90,6 +96,7 @@
             margin: 10px 0;
             cursor: pointer;
             font-size: 18px;
+            transition: background-color 0.3s ease;
         }
 
         .interactive-button:hover {
@@ -98,7 +105,20 @@
 
         .hidden-content {
             display: none;
-            margin-top: 10px;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .hidden-content.visible {
+            display: block;
+            opacity: 1;
+        }
+
+        #rotationExample {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin: 20px auto;
         }
 
         @media (max-width: 600px) {
@@ -111,29 +131,135 @@
                 position: static;
             }
         }
+
+        @keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+header h1 {
+    animation: slideIn 1s ease-in-out;
+}
+
+
+        .comment-container {
+            background-color: #f0f0f0;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+
+        .comment {
+            background-color: #fff;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+
+        .comment-content {
+            word-wrap: break-word;
+        }
+
+        #comment-input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            resize: vertical;
+        }
+
+        .comment-button {
+            background-color: #00796b;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            display: inline-block;
+            margin-top: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        .comment-button:hover {
+            background-color: #00695c;
+        }
+
     </style>
     <script>
-        function toggleContent(id) {
-            const content = document.getElementById(id);
-            if (content.style.display === "none" || content.style.display === "") {
-                content.style.display = "block";
-            } else {
-                content.style.display = "none";
+        // Función para agregar comentarios
+        function addComment() {
+            // Obtener el texto del comentario del textarea
+            let commentText = document.getElementById('comment-input').value.trim();
+            if (commentText === '') {
+                alert('Por favor, escribe tu comentario antes de agregarlo.');
+                return;
             }
+
+            // Crear un nuevo elemento de comentario
+            let commentContainer = document.createElement('div');
+            commentContainer.classList.add('comment');
+
+            let commentContent = document.createElement('p');
+            commentContent.classList.add('comment-content');
+            commentContent.textContent = commentText;
+
+            commentContainer.appendChild(commentContent);
+
+            // Agregar el nuevo comentario a la lista de comentarios
+            let commentsList = document.getElementById('comments-list');
+            commentsList.appendChild(commentContainer);
+
+            // Limpiar el textarea después de agregar el comentario
+            document.getElementById('comment-input').value = '';
+        }
+    </script>
+
+
+    <script>
+        // Función para alternar la visibilidad del contenido
+        function toggleContent(id) {
+            let element = document.getElementById(id);
+            element.classList.toggle('visible');
+        }
+
+        let currentBgColor = [224, 247, 250]; // Color inicial de fondo
+        const transitionSpeed = 0.02; // Velocidad de transición más baja para un cambio suave
+
+        function handleMouseMove(event) {
+            const x = event.clientX;
+            const y = event.clientY;
+            // Calculamos el nuevo color con una transición más suave
+            const newX = Math.floor((currentBgColor[0] + x * transitionSpeed) % 250);
+            const newY = Math.floor((currentBgColor[1] + y * transitionSpeed) % 250);
+            const newZ = Math.floor((currentBgColor[2] + 150 * transitionSpeed) % 250);
+            document.body.style.backgroundColor = `rgb(${newX}, ${newY}, ${newZ})`;
+            currentBgColor = [newX, newY, newZ];
         }
     </script>
 </head>
-<body>
+<body onmousemove="handleMouseMove(event)">
     <header>
         <h1>Trastorno de Déficit de Atención (TDAH)</h1>
     </header>
+    
     <nav>
         <a href="https://www.idrlabs.com/es/tdah/test.php">Test de TDAH</a>
         <a href="https://medlineplus.gov/spanish/attentiondeficithyperactivitydisorder.html">Más información</a>
         <a href="#video" class="pointer">Video de Referencia</a>
         <a href="#relaxation" class="pointer">Métodos de Relajación</a>
-        <a href="#">Contacto con un experto</a>
+        <a href="index.html">Juego sobre TDAH</a>
     </nav>
+    
     <section class="content-section">
         <h2>Bienvenidos a una página interactiva sobre el Trastorno de Déficit de Atención</h2>
         <button class="interactive-button" onclick="toggleContent('tdahInfo')">¿Qué es el TDAH?</button>
@@ -211,8 +337,13 @@
         <iframe width="560" height="315" src="https://www.youtube.com/embed/1KZYKPK1CPk" frameborder="0" allowfullscreen></iframe>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/yWPFdDxJNw8" frameborder="0" allowfullscreen></iframe>
     </section>
-    <footer>
-        <p>&copy; 2024 Despistados.com - Todos los derechos reservados.</p>
-    </footer>
+    <section id="comments-section" class="content-section">
+        <h2>Comentarios</h2>
+        <textarea id="comment-input" placeholder="Escribe tu comentario aquí..."></textarea>
+        <button class="interactive-button" onclick="addComment()">Agregar comentario</button>
+        <div id="comments-list">
+            <!-- Aquí se mostrarán los comentarios -->
+        </div>
+    </section>
 </body>
 </html>
