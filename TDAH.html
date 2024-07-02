@@ -6,19 +6,67 @@
     <title>Despistados.com - TDAH Interactivo</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
+            font-family: Arial, sans-serif; /*Aqui implemento un fondo relajante a la pagina*/
+            margin: 0; /*Y tambien se elimino los colores que afectavan al ruido visual*/
             padding: 0;
+            background-image: url('https://e0.pxfuel.com/wallpapers/819/76/desktop-wallpaper-relaxing-pc-background-page-1-relaxing-night.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             background-color: #fffdfd;
         }
-
-        header {
-            background-color: #80deea;
+        
+        header {           
             color: #000000;
-            padding: 110px 20px;
-            text-align: center;
-            position: relative;
+            padding: 110px 40px;
+            text-align: left;
+            position: relative; 
         }
+        header h1, /*Aqui hago que cada boton tenga una interactividad con el mause del usuario*/
+button.interactive-button, 
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+header h1::before,
+button.interactive-button::before,
+h2::before,
+h3::before,
+h4::before,
+h5::before,
+h6::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    transform: scaleX(0); /* Empieza sin subrayado */
+    transition: transform 0.3s ease;
+}
+
+header h1:hover::before,
+button.interactive-button:hover::before,
+h2:hover::before,
+h3:hover::before,
+h4:hover::before,
+h5:hover::before,
+h6:hover::before {
+    transform: scaleX(1); /* Aparece el subrayado al hacer hover */
+}
+
+
+header h1:hover::before {
+    transform: scaleX(1); /* Aparece el subrayado al hacer hover */
+}
+
 
         nav {
             background-color: #066e25;
@@ -34,14 +82,15 @@
         }
 
         nav a:hover {
-            background-color: #00695c;
+            background-color: #0ec7b7;
         }
 
         .content-section {
             padding: 20px;
-            background-color: #fff; 
+            background-color: rgba(255, 255, 255, 0.7); /* Fondo semitransparente */
             color: #000;
             margin-bottom: 20px;
+            border-radius: 10px; /* Bordes redondeados */
         }
 
         .content-section p,
@@ -100,16 +149,12 @@
             transition: opacity 0.5s ease-in-out;
         }
 
-        .hidden-content.visible {
+        .hidden-content.visible { /* aqui se configura el fondo de la pagina*/
             display: block;
             opacity: 1;
-        }
-
-        #rotationExample {
-            width: 100px;
-            height: 100px;
-            background-color: red;
-            margin: 20px auto;
+            background-color: rgba(255, 255, 255, 0.7); /* Fondo semitransparente */
+            padding: 10px; /* Espaciado interno */
+            border-radius: 5px; /* Bordes redondeados */
         }
 
         @media (max-width: 600px) {
@@ -128,23 +173,9 @@
             let element = document.getElementById(id);
             element.classList.toggle('visible');
         }
-
-        let currentBgColor = [224, 247, 250]; // Color inicial de fondo
-        const transitionSpeed = 0.02; // Velocidad de transición más baja para un cambio suave
-
-        function handleMouseMove(event) {
-            const x = event.clientX;
-            const y = event.clientY;
-            // Calculamos el nuevo color con una transición más suave
-            const newX = Math.floor((currentBgColor[0] + x * transitionSpeed) % 250);
-            const newY = Math.floor((currentBgColor[1] + y * transitionSpeed) % 250);
-            const newZ = Math.floor((currentBgColor[2] + 150 * transitionSpeed) % 250);
-            document.body.style.backgroundColor = `rgb(${newX}, ${newY}, ${newZ})`;
-            currentBgColor = [newX, newY, newZ];
-        }
     </script>
 </head>
-<body onmousemove="handleMouseMove(event)">
+<body>
     <header>
         <h1>Trastorno de Déficit de Atención (TDAH)</h1>
     </header>
@@ -242,5 +273,7 @@
             <!-- Aquí se mostrarán los comentarios -->
         </div>
     </section>
+    
+
 </body>
 </html>
