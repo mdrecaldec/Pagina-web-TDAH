@@ -3,24 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Despistados.com</title> 
-    <link rel="icon" href="10280606.ico" type="image/x-icon"> <!--Aqui implemento un logo a la pagina en la parte de la pestaña-->>
+    <title>Despistados.com - TDAH Interactivo</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #e0f7fa;
+            background-color: #fffdfd;
         }
 
         header {
-            background-color: #00796b;
-            color: #fff;
+            background-color: #80deea;
+            color: #000000;
             padding: 110px 20px;
-            text-align: left;
-            background-image: url('https://d51h1y0hva8v.cloudfront.net/images/default-source/importacion/deficit-atencional-t.jpg?sfvrsn=776a57cc_0');
-            background-size: cover;
-            background-position: center;
+            text-align: center;
             position: relative;
         }
 
@@ -81,11 +77,6 @@
             font-size: 24px; 
         }
 
-        header h1 {
-        color: black;
-        text-align: right; 
-    }
-
         .interactive-button {
             background-color: #00796b;
             color: #fff;
@@ -131,102 +122,8 @@
                 position: static;
             }
         }
-
-        @keyframes slideIn {
-    0% {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-header h1 {
-    animation: slideIn 1s ease-in-out;
-}
-
-
-        .comment-container {
-            background-color: #f0f0f0;
-            padding: 20px;
-            margin-top: 20px;
-            border-radius: 8px;
-        }
-
-        .comment {
-            background-color: #fff;
-            padding: 10px;
-            margin-bottom: 10px;
-            border-radius: 8px;
-            box-shadow: 0 0 5px rgba(0,0,0,0.1);
-        }
-
-        .comment-content {
-            word-wrap: break-word;
-        }
-
-        #comment-input {
-            width: 100%;
-            padding: 10px;
-            margin-top: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-            resize: vertical;
-        }
-
-        .comment-button {
-            background-color: #00796b;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            text-align: center;
-            display: inline-block;
-            margin-top: 10px;
-            cursor: pointer;
-            font-size: 18px;
-            transition: background-color 0.3s ease;
-        }
-
-        .comment-button:hover {
-            background-color: #00695c;
-        }
-
     </style>
     <script>
-        // Función para agregar comentarios
-        function addComment() {
-            // Obtener el texto del comentario del textarea
-            let commentText = document.getElementById('comment-input').value.trim();
-            if (commentText === '') {
-                alert('Por favor, escribe tu comentario antes de agregarlo.');
-                return;
-            }
-
-            // Crear un nuevo elemento de comentario
-            let commentContainer = document.createElement('div');
-            commentContainer.classList.add('comment');
-
-            let commentContent = document.createElement('p');
-            commentContent.classList.add('comment-content');
-            commentContent.textContent = commentText;
-
-            commentContainer.appendChild(commentContent);
-
-            // Agregar el nuevo comentario a la lista de comentarios
-            let commentsList = document.getElementById('comments-list');
-            commentsList.appendChild(commentContainer);
-
-            // Limpiar el textarea después de agregar el comentario
-            document.getElementById('comment-input').value = '';
-        }
-    </script>
-
-
-    <script>
-        // Función para alternar la visibilidad del contenido
         function toggleContent(id) {
             let element = document.getElementById(id);
             element.classList.toggle('visible');
