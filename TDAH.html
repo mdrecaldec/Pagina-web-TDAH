@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Despistados.com - TDAH Interactivo</title>
+    <title>Despistados.com </title>
+    <script defer src="https://app.embed.im/snow.js"></script>
     <style>
         body {
-            font-family: Arial, sans-serif; /*Aqui implemento un fondo relajante a la pagina*/
-            margin: 0; /*Y tambien se elimino los colores que afectavan al ruido visual*/
+            font-family: Arial, sans-serif;
+            margin: 0;
             padding: 0;
             background-image: url('https://e0.pxfuel.com/wallpapers/819/76/desktop-wallpaper-relaxing-pc-background-page-1-relaxing-night.jpg');
             background-size: cover;
@@ -18,63 +19,70 @@
         }
 
         header {
-            background-color: #80deea;
             color: #000000;
             padding: 110px 20px;
             text-align: center;
             position: relative;
         }
-        header h1, /*Aqui hago que cada boton tenga una interactividad con el mause del usuario*/
-button.interactive-button, 
-h2,
-h3,
-h4,
-h5,
-h6 {
-    position: relative;
-    transition: color 0.3s ease;
-}
 
-header h1::before,
-button.interactive-button::before,
-h2::before,
-h3::before,
-h4::before,
-h5::before,
-h6::before {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #000;
-    transform: scaleX(0); /* Empieza sin subrayado */
-    transition: transform 0.3s ease;
-}
+        header h1, 
+        button.interactive-button, 
+        h2, h3, h4, h5, h6 {
+            position: relative;
+            transition: color 0.3s ease;
+        }
 
-header h1:hover::before,
-button.interactive-button:hover::before,
-h2:hover::before,
-h3:hover::before,
-h4:hover::before,
-h5:hover::before,
-h6:hover::before {
-    transform: scaleX(1); /* Aparece el subrayado al hacer hover */
-}
+        header h1::before,
+        button.interactive-button::before,
+        h2::before,
+        h3::before,
+        h4::before,
+        h5::before,
+        h6::before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #000;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
 
-
-header h1:hover::before {
-    transform: scaleX(1); /* Aparece el subrayado al hacer hover */
-}
-
+        header h1:hover::before,
+        button.interactive-button:hover::before,
+        h2:hover::before,
+        h3:hover::before,
+        h4:hover::before,
+        h5:hover::before,
+        h6:hover::before {
+            transform: scaleX(1);
+        }
 
         nav {
             background-color: #066e25;
             color: #fff;
             padding: 10px 0;
             text-align: center;
+            position: sticky;
+            top: 0;
         }
+
+        header h1, h2 {
+            font-size: 35px; /* Aumenta el tamaño del h1 */
+            font-weight: bold; /* Añade negrita para enfatizar */
+            margin-bottom: 15px; /* Espacio inferior para separación */
+            letter-spacing: 2px; /* Espaciado entre letras */
+            text-transform: uppercase;
+            text-align: left; /* Texto en mayúsculas */
+            color: rgb(0, 0, 0); /* Color de texto */
+            animation: fadeInDown 1s ease;
+
+        }
+
+
+
 
         nav a {
             color: #fff;
@@ -88,9 +96,23 @@ header h1:hover::before {
 
         .content-section {
             padding: 20px;
-            background-color: #fff; 
+            background-color: rgba(255, 255, 255, 0.8);
             color: #000;
             margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .hidden-content {
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        .hidden-content.visible {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .content-section p,
@@ -139,26 +161,23 @@ header h1:hover::before {
             transition: background-color 0.3s ease;
         }
 
+        
+    
+
         .interactive-button:hover {
             background-color: #00695c;
         }
 
-        .hidden-content {
-            display: none;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-        }
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
 
-        .hidden-content.visible { /* aqui se configura el fondo de la pagina*/
-            display: block;
-            opacity: 1;
-        }
-
-        #rotationExample {
-            width: 100px;
-            height: 100px;
-            background-color: red;
-            margin: 20px auto;
         }
 
         @media (max-width: 600px) {
@@ -171,11 +190,22 @@ header h1:hover::before {
                 position: static;
             }
         }
+
+
+
+    
+    
     </style>
     <script>
         function toggleContent(id) {
             let element = document.getElementById(id);
-            element.classList.toggle('visible');
+            if (element.classList.contains('visible')) {
+                element.classList.remove('visible');
+                setTimeout(() => element.style.display = 'none', 500);
+            } else {
+                element.style.display = 'block';
+                setTimeout(() => element.classList.add('visible'), 10);
+            }
         }
     </script>
 </head>
@@ -183,7 +213,12 @@ header h1:hover::before {
     <header>
         <h1>Trastorno de Déficit de Atención (TDAH)</h1>
     </header>
-    
+    <div class="menu">
+        <input type="checkbox"/>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
     <nav>
         <a href="https://www.idrlabs.com/es/tdah/test.php">Test de TDAH</a>
         <a href="https://medlineplus.gov/spanish/attentiondeficithyperactivitydisorder.html">Más información</a>
@@ -191,7 +226,8 @@ header h1:hover::before {
         <a href="#relaxation" class="pointer">Métodos de Relajación</a>
         <a href="index.html">Juego sobre TDAH</a>
     </nav>
-    
+
+  
     <section class="content-section">
         <h2>Bienvenidos a una página interactiva sobre el Trastorno de Déficit de Atención</h2>
         <button class="interactive-button" onclick="toggleContent('tdahInfo')">¿Qué es el TDAH?</button>
@@ -236,6 +272,7 @@ header h1:hover::before {
             <p>El TDAH no significa que seas menos inteligente o capaz que los demás. Es simplemente una manera diferente en la que tu cerebro funciona, y con el apoyo adecuado, puedes aprender a manejarlo y aprovechar tus fortalezas.</p>
         </div>
     </section>
+    
     <section id="relaxation" class="content-section">
         <h2>Métodos de Relajación para el TDAH</h2>
         <button class="interactive-button" onclick="toggleContent('meditation')">Meditación y mindfulness</button>
@@ -264,20 +301,20 @@ header h1:hover::before {
             <img src="https://www.goredforwomen.org/-/media/Images/Healthy-Living/Healthy-Lifestyle/man_relaxing_In_nature.jpg" alt="Tiempo en la naturaleza" width="300" height="200">
         </div>
     </section>
-    <section id="video" class="video-container">
-        <h2>Videos de Referencia</h2>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/1KZYKPK1CPk" frameborder="0" allowfullscreen></iframe>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/yWPFdDxJNw8" frameborder="0" allowfullscreen></iframe>
-    </section>
-    <section id="comments-section" class="content-section">
-        <h2>Comentarios</h2>
-        <textarea id="comment-input" placeholder="Escribe tu comentario aquí..."></textarea>
-        <button class="interactive-button" onclick="addComment()">Agregar comentario</button>
-        <div id="comments-list">
-            <!-- Aquí se mostrarán los comentarios -->
-        </div>
-    </section>
+</section>
+<section id="video" class="video-container">
+    <h2>Videos de Referencia</h2>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/1KZYKPK1CPk" frameborder="0" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/yWPFdDxJNw8" frameborder="0" allowfullscreen></iframe>
+</section>
+<section id="comments-section" class="content-section">
+    <h2>Comentarios</h2>
+    <textarea id="comment-input" placeholder="Escribe tu comentario aquí..."></textarea>
+    <button class="interactive-button" onclick="addComment()">Agregar comentario</button>
+    <div id="comments-list">
+        <!-- Aquí se mostrarán los comentarios -->
+    </div>
+</section>
     
-
 </body>
 </html>
