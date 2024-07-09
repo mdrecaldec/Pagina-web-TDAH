@@ -6,8 +6,8 @@
     <title>Despistados.com - TDAH Interactivo</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
+            font-family: Arial, sans-serif; /*Aqui implemento un fondo relajante a la pagina*/
+            margin: 0; /*Y tambien se elimino los colores que afectavan al ruido visual*/
             padding: 0;
             background-image: url('https://e0.pxfuel.com/wallpapers/819/76/desktop-wallpaper-relaxing-pc-background-page-1-relaxing-night.jpg');
             background-size: cover;
@@ -16,51 +16,58 @@
             background-attachment: fixed;
             background-color: #fffdfd;
         }
-        
+
         header {
+            background-color: #80deea;
             color: #000000;
-            padding: 110px 40px;
-            text-align: left;
-            position: relative; 
-        }
-        header h1,
-        button.interactive-button, 
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
+            padding: 110px 20px;
+            text-align: center;
             position: relative;
-            transition: color 0.3s ease;
         }
+        header h1, /*Aqui hago que cada boton tenga una interactividad con el mause del usuario*/
+button.interactive-button, 
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    transition: color 0.3s ease;
+}
 
-        header h1::before,
-        button.interactive-button::before,
-        h2::before,
-        h3::before,
-        h4::before,
-        h5::before,
-        h6::before {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: #000;
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
+header h1::before,
+button.interactive-button::before,
+h2::before,
+h3::before,
+h4::before,
+h5::before,
+h6::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    transform: scaleX(0); /* Empieza sin subrayado */
+    transition: transform 0.3s ease;
+}
 
-        header h1:hover::before,
-        button.interactive-button:hover::before,
-        h2:hover::before,
-        h3:hover::before,
-        h4:hover::before,
-        h5:hover::before,
-        h6:hover::before {
-            transform: scaleX(1);
-        }
+header h1:hover::before,
+button.interactive-button:hover::before,
+h2:hover::before,
+h3:hover::before,
+h4:hover::before,
+h5:hover::before,
+h6:hover::before {
+    transform: scaleX(1); /* Aparece el subrayado al hacer hover */
+}
+
+
+header h1:hover::before {
+    transform: scaleX(1); /* Aparece el subrayado al hacer hover */
+}
+
 
         nav {
             background-color: #066e25;
@@ -81,10 +88,9 @@
 
         .content-section {
             padding: 20px;
-            background-color: rgba(255, 255, 255, 0.7);
+            background-color: #fff; 
             color: #000;
             margin-bottom: 20px;
-            border-radius: 10px;
         }
 
         .content-section p,
@@ -143,22 +149,16 @@
             transition: opacity 0.5s ease-in-out;
         }
 
-        .hidden-content.visible {
+        .hidden-content.visible { /* aqui se configura el fondo de la pagina*/
             display: block;
             opacity: 1;
-            animation: fade-in 0.5s ease-in-out;
-            background-color: rgba(255, 255, 255, 0.7);
-            padding: 10px;
-            border-radius: 5px;
         }
 
-        @keyframes fade-in {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+        #rotationExample {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin: 20px auto;
         }
 
         @media (max-width: 600px) {
@@ -277,5 +277,7 @@
             <!-- Aquí se mostrarán los comentarios -->
         </div>
     </section>
+    
+
 </body>
 </html>
