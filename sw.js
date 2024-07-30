@@ -1,5 +1,5 @@
 const nombreCache = "sitio-cache"
-const elementos = ["/","/index","/js/accion.js", "/js/aplicacion.js", "/css/estilo.css"]
+const elementos = ["/","/Juego_index","/js/accion.js", "/js/aplicacion.js", "/css/estilo.css"]
 
 //Instalar el service worker.
 self.addEventListener('install', evt =>
