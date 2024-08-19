@@ -6,102 +6,51 @@
     <meta name="keywords" content="Simon dice,Simon says,HTML,CSS,JavaScript">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Índice de Juegos</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* General Styles */
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
             background-color: #f4f4f4;
             overflow-x: hidden;
             height: 100vh;
         }
 
         .container {
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.7); 
+            margin-top: 50px;
+            background: rgba(255, 255, 255, 0.5); /* Ajusta la opacidad aquí (de 0.0 a 1.0) de transparencia*/
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            position: relative;
-            z-index: 2;
+            padding: 30px;
             border-radius: 10px;
+            z-index: 2;
+            position: relative;
         }
 
         header {
             text-align: center;
-            margin-bottom: 20px;
-        }
-
-        h1 {
-            color: #333;
-        }
-
-        .main {
-            padding: 20px;
-        }
-
-        .game {
             margin-bottom: 30px;
         }
 
-        h2 {
-            color: #555;
+        h1, h2, h3 {
+            color: #333;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
         }
 
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            margin-top: 10px;
+        .btn-custom {
             color: #fff;
             background-color: #007bff;
-            text-decoration: none;
-            border-radius: 5px;
-            text-align: center;
+            border-color: #007bff;
         }
 
-        .btn:hover {
+        .btn-custom:hover {
             background-color: #0056b3;
+            border-color: #004494;
         }
 
         .rules {
             margin-top: 20px;
         }
 
-        .rules h3 {
-            color: #333;
-        }
-
-        /* Cuadrícula para las reglas estilo Excel */
-        .rules-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Dos columnas iguales */
-            gap: 0; /* Sin espacio entre celdas */
-            border: 1px solid #ddd; /* Borde exterior de la tabla */
-        }
-
-        .rules-grid li {
-            padding: 10px;
-            border: 1px solid #ddd; /* Borde de cada celda */
-            box-shadow: none; /* Sin sombra */
-            background: rgba(255, 255, 255, 1); /* Fondo blanco sólido */
-            border-left: none; /* Sin borde izquierdo entre celdas */
-            border-top: none; /* Sin borde superior entre celdas */
-        }
-
-        .rules-grid li:nth-child(odd) {
-            border-left: 1px solid #ddd; /* Borde izquierdo para la primera columna */
-        }
-
-        .rules-grid li:nth-child(1), .rules-grid li:nth-child(2) {
-            border-top: 1px solid #ddd; /* Borde superior para la primera fila */
-        }
-
-        .rules p {
-            margin-top: 10px;
-        }
-
-        /* Background Video */
         .video-bg {
             position: fixed;
             top: 0;
@@ -114,7 +63,6 @@
             opacity: 0.8;
         }
 
-        /* Overlay */
         .overlay {
             position: fixed;
             top: 0;
@@ -123,10 +71,6 @@
             height: 100%;
             background: rgba(0, 0, 0, 0.5);
             z-index: 1;
-        }
-
-        h1, h2, h3, p, ul {
-            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
         }
     </style>
 </head>
@@ -137,7 +81,7 @@
         Tu navegador no soporta el elemento de video.
     </video>
 
-    <!-- Overlay for darkening the video -->
+    <!-- video -->
     <div class="overlay"></div>
 
     <div class="container">
@@ -145,38 +89,41 @@
             <h1>Índice de Juegos</h1>
         </header>
         <main>
-            <section class="game">
+            <section class="game mb-5">
                 <h2>Juego 1: Simon Dice</h2>
-                <a href="Juego1/juegoAten.html" class="btn">Jugar Ahora</a>
-                <div class="rules">
+                <a href="Juego1/juegoAten.html" class="btn btn-custom btn-lg">Jugar Ahora</a>
+                <div class="rules mt-4">
                     <h3>Reglas del Juego:</h3>
-                    <ul class="rules-grid">
-                        <li>El juego trata sobre la atención, el reflejo y la memoria.</li>
-                        <li>Si Simon dice el color, debes recordar cuántas veces se mostró el color y la combinación de colores.</li>
-                        <li>Buena Suerte.</li>
+                    <ul class="list-group">
+                        <li class="list-group-item">El juego trata sobre la atención, el reflejo y la memoria.</li>
+                        <li class="list-group-item">Si Simon dice el color, debes recordar cuántas veces se mostró el color y la combinación de colores.</li>
+                        <li class="list-group-item">Buena Suerte.</li>
                     </ul>
-                    <h3>Funcionalidad:</h3>
+                    <h3 class="mt-4">Funcionalidad:</h3>
                     <p>El juego verifica si sigues las instrucciones correctamente y te da retroalimentación.</p>
                 </div>
             </section>
-        </main>
 
-        <main>
             <section class="game">
-                <h2>Juego 2: Juego de la memoria</h2>
-                <a href="juego2/index.html" class="btn">Jugar Ahora</a>
-                <div class="rules">
+                <h2>Juego 2: Juego de la Memoria</h2>
+                <a href="juego2/index.html" class="btn btn-custom btn-lg">Jugar Ahora</a>
+                <div class="rules mt-4">
                     <h3>Reglas del Juego:</h3>
-                    <ul class="rules-grid">
-                        <li>El juego trata sobre la atención, el reflejo y la memoria.</li>
-                        <li>Tienes la mision de recordar las cartas con sus respectivas imagenes.</li>
-                        <li>Buena Suerte.</li>
+                    <ul class="list-group">
+                        <li class="list-group-item">El juego trata sobre la atención, el reflejo y la memoria.</li>
+                        <li class="list-group-item">Tienes la misión de recordar las cartas con sus respectivas imágenes.</li>
+                        <li class="list-group-item">Buena Suerte.</li>
                     </ul>
-                    <h3>Funcionalidad:</h3>
+                    <h3 class="mt-4">Funcionalidad:</h3>
                     <p>El juego verifica si sigues las instrucciones correctamente y te da retroalimentación.</p>
                 </div>
             </section>
         </main>
     </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
