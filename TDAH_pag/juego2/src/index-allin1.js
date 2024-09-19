@@ -69,9 +69,9 @@ function addPlayBehaviorToCards(game) {
 
 
 /**
- * Checks if the given cardsWithFront array are a pair and adds the points
- *   accordingly depending of a hit or miss
- * @param  {array} cardsWithFront blalbalabab
+ * Comprueba si la matriz cardsWithFront dada es un par y suma los puntos
+ *  
+ * @param  {array} cardsWithFront 
  */
 function checkIfPairs(cardsWithFront) {
   for(let i in cardsWithFront) {
@@ -94,8 +94,9 @@ function checkIfPairs(cardsWithFront) {
 
 
 /**
- * Checks if we have a win condition when all the cards have a flipped pair
- * @param  {Array} game the status of the game
+ * Comprueba si tenemos una condición de ganancia cuando todas las cartas tienen un par volteado
+
+ * @param  {Array} game 
  */
 function checkIfWin(game) {
   let cardsPair = game.filter(elem => elem.status === 'pair')
@@ -110,7 +111,7 @@ function checkIfWin(game) {
 
 
 /**
- * Alters the dom elements to reflect a new game
+ * Altera los elementos dom para reflejar un nuevo juego.
  */
 function playAgain() {
   $('#win').hide();
@@ -130,8 +131,8 @@ function playAgain() {
 }
 
 /**
- * Main function that sets the event listeners to the dom nodes and
- *   sets up the game for playing
+ * Función principal que configura los detectores de eventos en los nodos dom y
+ *   configura el juego para jugar
  */
 function main() {
   $('#play-game').click(initGame)

@@ -34,8 +34,8 @@ function playAgain() {
 }
 
 /**
- * Main function that sets the event listeners to the dom nodes and
- *   sets up the game for playing
+ * Función principal que configura los detectores de eventos en los nodos dom y
+ *   configura el juego para jugar
  */
 function main() {
   $('#play-game').click(domBehaviorIfInitGame)

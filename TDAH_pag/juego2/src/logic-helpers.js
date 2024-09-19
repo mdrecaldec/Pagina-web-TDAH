@@ -52,9 +52,9 @@ function addPoints(failureOrSuccess) {
 }
 
 /**
- * Checks if the given cardsWithFront array are a pair and adds the points
- *   accordingly depending of a hit or miss
- * @param  {array} cardsWithFront blalbalabab
+ * Comprueba si la matriz cardsWithFront dada es un par y suma los puntos
+ *   en consecuencia, dependiendo de un acierto o un error
+ * @param  {array} cardsWithFront 
  */
 function checkIfPairs(cardsWithFront) {
   for(let i in cardsWithFront) {

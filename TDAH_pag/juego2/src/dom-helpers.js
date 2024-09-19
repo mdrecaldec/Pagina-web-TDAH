@@ -36,8 +36,8 @@ function domBehaviorIfAddPoints(failOrSuccess) {
 }
 
 /**
- * Checks if we have a win condition when all the cards have a flipped pair
- * @param  {Array} game the status of the game
+ * Comprueba si tenemos una condición de ganancia cuando todas las cartas tienen un par volteado
+ * @param  {Array} game 
  */
 function domBehaviorIfWin() {
   $('#win').attr('style', 'display: flex')
@@ -49,7 +49,7 @@ function domBehaviorIfWin() {
 
 
 /**
- * Alters the dom elements to reflect a new game
+ *Altera los elementos dom para reflejar un nuevo juego.
  */
 function domBehaviorIfPlayAgain() {
   $('#win').hide();
